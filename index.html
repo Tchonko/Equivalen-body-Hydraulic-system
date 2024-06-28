@@ -67,55 +67,79 @@
 
             let hydraulicEquivalent = '';
             let functionText = '';
+            let image = '';
 
             switch (organSystem) {
                 case 'heart':
                     hydraulicEquivalent = 'Pump';
                     functionText = 'Propels blood (fluid) throughout the body.';
+                    image = 'images/pompe.jpg';
                     break;
                 case 'bloodVessels':
                     hydraulicEquivalent = 'Pipes and hoses';
                     functionText = 'Transport blood under different pressures and to different parts of the body.';
+                    image = 'images/canalisation.jpg';
                     break;
                 case 'blood':
                     hydraulicEquivalent = 'Hydraulic fluid';
                     functionText = 'Carries oxygen, nutrients and removes waste.';
+                    image = 'images/fluide.jpg';
                     break;
                 case 'lungs':
                     hydraulicEquivalent = 'Heat exchanger / Filter';
                     functionText = 'Oxygenate the blood (gas exchange) and filter certain particles.';
+                    image = 'images/echangeurChaleur.jpg';
                     break;
                 case 'kidneys':
                     hydraulicEquivalent = 'Filter / Purification system';
                     functionText = 'Filters blood and eliminates metabolic waste.';
+                    image = 'images/echangeurChaleur.jpg';
                     break;
                 case 'liver':
                     hydraulicEquivalent = 'Pressure regulator / Reservoir';
                     functionText = 'Helps regulate blood volume and stores glucose (energy).';
+                    image = 'images/limiteurPression.jpg';
                     break;
                 case 'bloodPressure':
                     hydraulicEquivalent = 'Hydraulic pressure';
                     functionText = 'Force exerted by blood on artery walls, essential for circulation.';
+                    image = 'images/pression.jpg';
                     break;
                 case 'heartVeinValves':
                     hydraulicEquivalent = 'Check valves';
                     functionText = 'Prevent blood reflux and ensure unidirectional circulation.';
+                    image = 'images/clapet.jpg';
                     break;
                 case 'autonomicNervousSystem':
                     hydraulicEquivalent = 'Control system';
                     functionText = 'Regulates heart rate and blood pressure according to the body\'s needs.';
+                    image = 'images/controle.jpg';
                     break;
                 case 'muscles':
                     hydraulicEquivalent = 'Actuators';
                     functionText = 'Use blood energy (oxygen supply) to contract, enabling movement.';
+                    image = 'images/cactionneur.jpg';
                     break;
                 default:
                     hydraulicEquivalent = '';
                     functionText = '';
+                    image = '';
                     break;
             }
 
+            // Create a new image element
+            var img = document.createElement('img');
+
+            // Set the source of the image
+            img.src = image;
+
+            // Optionally, you can set other attributes like alt, width, height, etc.
+            img.alt = '';
+            img.width = 400;  // Set the width in pixels
+            img.height = 300; // Set the height in pixels
+
             outputDiv.innerHTML = `<strong>Hydraulic Equivalent:</strong> ${hydraulicEquivalent}<br><strong>Function:</strong> ${functionText}`;
+            outputDiv.appendChild(img);
         }
     </script>
 </body>
