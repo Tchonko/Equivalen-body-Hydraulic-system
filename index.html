@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equivalence Between Human Body and Hydraulic System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(mining.jpg);
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        #output {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: auto;
+            max-width: 400px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Equivalence Between Human Body and Hydraulic System</h1>
+    <form id="equivalenceForm">
+        <label for="organSystem">Organ / System:</label>
+        <select id="organSystem" name="organSystem">
+            <option value="heart">Heart</option>
+            <option value="bloodVessels">Blood vessels (arteries, veins, capillaries)</option>
+            <option value="blood">Blood</option>
+            <option value="lungs">Lungs</option>
+            <option value="kidneys">Kidneys</option>
+            <option value="liver">Liver</option>
+            <option value="bloodPressure">Blood pressure</option>
+            <option value="heartVeinValves">Heart and vein valves</option>
+            <option value="autonomicNervousSystem">Autonomic nervous system</option>
+            <option value="muscles">Muscles</option>
+        </select>
+        <button type="button" onclick="showEquivalence()">Equivalence</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        function showEquivalence() {
+            const organSystem = document.getElementById('organSystem').value;
+            const outputDiv = document.getElementById('output');
+
+            let hydraulicEquivalent = '';
+            let functionText = '';
+
+            switch (organSystem) {
+                case 'heart':
+                    hydraulicEquivalent = 'Pump';
+                    functionText = 'Propels blood (fluid) throughout the body.';
+                    break;
+                case 'bloodVessels':
+                    hydraulicEquivalent = 'Pipes and hoses';
+                    functionText = 'Transport blood under different pressures and to different parts of the body.';
+                    break;
+                case 'blood':
+                    hydraulicEquivalent = 'Hydraulic fluid';
+                    functionText = 'Carries oxygen, nutrients and removes waste.';
+                    break;
+                case 'lungs':
+                    hydraulicEquivalent = 'Heat exchanger / Filter';
+                    functionText = 'Oxygenate the blood (gas exchange) and filter certain particles.';
+                    break;
+                case 'kidneys':
+                    hydraulicEquivalent = 'Filter / Purification system';
+                    functionText = 'Filters blood and eliminates metabolic waste.';
+                    break;
+                case 'liver':
+                    hydraulicEquivalent = 'Pressure regulator / Reservoir';
+                    functionText = 'Helps regulate blood volume and stores glucose (energy).';
+                    break;
+                case 'bloodPressure':
+                    hydraulicEquivalent = 'Hydraulic pressure';
+                    functionText = 'Force exerted by blood on artery walls, essential for circulation.';
+                    break;
+                case 'heartVeinValves':
+                    hydraulicEquivalent = 'Check valves';
+                    functionText = 'Prevent blood reflux and ensure unidirectional circulation.';
+                    break;
+                case 'autonomicNervousSystem':
+                    hydraulicEquivalent = 'Control system';
+                    functionText = 'Regulates heart rate and blood pressure according to the body\'s needs.';
+                    break;
+                case 'muscles':
+                    hydraulicEquivalent = 'Actuators';
+                    functionText = 'Use blood energy (oxygen supply) to contract, enabling movement.';
+                    break;
+                default:
+                    hydraulicEquivalent = '';
+                    functionText = '';
+                    break;
+            }
+
+            outputDiv.innerHTML = `<strong>Hydraulic Equivalent:</strong> ${hydraulicEquivalent}<br><strong>Function:</strong> ${functionText}`;
+        }
+    </script>
+</body>
+</html>
